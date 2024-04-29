@@ -15,10 +15,4 @@
     <ProjectReference Include="..\ShippingOrders.Infrastructure\ShippingOrders.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="InputModels\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
