@@ -1,7 +1,8 @@
 ﻿using ShippingOrders.Core.Entities;
 
 namespace ShippingOrders.Core.Repositories;
-public interface IShippingOrderRepository {
+public interface IShippingOrderRepository
+{
 
     Task<ShippingOrder> GetByCodeAsync(string code);
 

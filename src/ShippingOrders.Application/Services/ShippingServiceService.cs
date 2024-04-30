@@ -1,21 +1,23 @@
 ﻿using ShippingOrders.Application.ViewModels;
-using ShippingOrders.Core.Entities;
+using ShippingOrders.Core.Repositories;
 
 namespace ShippingOrders.Application.Services
 {
     public class ShippingServiceService : IShippingServiceService
     {
-        public Task<List<ShippingServiceViewModel>> GetAll()
-        {
-            var shippingServices = new List<ShippingService>
-            {
-                new ShippingService("Selo", 0, 1.2m),
-                new ShippingService("Envio com Registro", 2.2m, 5),
-                new ShippingService("Envio sem Registro", 1, 3)
-            };
 
-            return Task.FromResult(shippingServices.Select(s => new ShippingServiceViewModel(s.Id, s.Title, s.PricePerKg, s.FixedPrice))
-                .ToList());
+        private readonly IShippingServiceRepository _repository;
+
+        public ShippingServiceService(IShippingServiceRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public async Task<List<ShippingServiceViewModel>> GetAll()
+        {
+            var shippingServices = await _repository.GetAllAsync();
+            return shippingServices.Select(s => new ShippingServiceViewModel(s.Id, s.Title, s.PricePerKg, s.FixedPrice))
+                .ToList();
 
         }
     }
