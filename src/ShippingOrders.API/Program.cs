@@ -1,6 +1,11 @@
+using ShippingOrders.Application;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Injeção de dependências da camada de Application
+builder.Services.AddApplication();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

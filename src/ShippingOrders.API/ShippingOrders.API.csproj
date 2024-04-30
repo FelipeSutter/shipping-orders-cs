@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ShippingOrders.Application\ShippingOrders.Application.csproj" />
     <ProjectReference Include="..\ShippingOrders.Core\ShippingOrders.Core.csproj" />
     <ProjectReference Include="..\ShippingOrders.Infrastructure\ShippingOrders.Infrastructure.csproj" />

@@ -10,6 +10,8 @@ public class AddShippingOrderInputModel {
     public DeliveryAddressInputModel DeliveryAddress { get; set; }
     public List<ShippingServiceInputModel> Services { get; set; }
 
+    public ShippingOrder ToEntity() => new ShippingOrder(Description, WeightInKg, DeliveryAddress.ToValueObject());
+
 }
 
 public class DeliveryAddressInputModel {
