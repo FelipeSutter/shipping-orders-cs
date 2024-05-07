@@ -11,7 +11,7 @@ namespace ShippingOrders.Infrastructure.Persistence.Repositories
 
         public ShippingOrderRepository(IMongoDatabase database)
         {
-            _collection = database.GetCollection<ShippingOrder>("shipping-orders");
+            _collection = database.GetCollection<ShippingOrder>("shippingOrders");
         }
 
         public async Task AddAsync(ShippingOrder shippingOrder)

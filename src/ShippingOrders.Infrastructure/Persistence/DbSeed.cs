@@ -16,13 +16,13 @@ namespace ShippingOrders.Infrastructure.Persistence
             new ShippingService("Caixa tamanho P", 0, 5),
         };
 
-        // Pega a collection 'shipping-services' do banco
+        // Pega a collection 'shippingServices' do banco
         public DbSeed(IMongoDatabase database)
         {
-            _collection = database.GetCollection<ShippingService>("shipping-services");
+            _collection = database.GetCollection<ShippingService>("shippingServices");
         }
 
-        // Método para popular o banco de dados caso não tenha registros na tabela de shipping-services.
+        // Método para popular o banco de dados caso não tenha registros na tabela de shippingServices.
         public void Populate()
         {
             if (_collection.CountDocuments(c => true) == 0)
